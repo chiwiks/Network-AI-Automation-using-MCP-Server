@@ -1,0 +1,129 @@
+ - name: configure ospf on the three routers
+   hosts: arista_ceos
+   gather_facts: no
+
+   tasks: 
+     - name: Configure R1 interfaces
+       arista.eos.eos_interfaces:
+        config:
+          - name: Ethernet1
+            enabled: true
+            mode: layer3
+          - name: Ethernet2
+            enabled: true
+            mode: layer3
+        state: merged
+       when: inventory_hostname == "clab-mcp-lab-r1"
+
+     - name: Configure R2 interfaces
+       arista.eos.eos_interfaces:
+        config:
+          - name: Ethernet1
+            enabled: true
+            mode: layer3
+          - name: Ethernet2
+            enabled: true
+            mode: layer3
+        state: merged
+       when: inventory_hostname == "clab-mcp-lab-r2"
+
+     - name: Configure R3 interfaces
+       arista.eos.eos_interfaces:
+        config:
+          - name: Ethernet1
+            enabled: true
+            mode: layer3
+          - name: Ethernet2
+            enabled: true
+            mode: layer3
+        state: merged
+       when: inventory_hostname == "clab-mcp-lab-r3"
+
+
+
+     - name: Configure R1 layer interfaces
+       arista.eos.eos_l3_interfaces:
+         config:
+        
+           - name: Ethernet1
+             ipv4:
+               - address: 192.168.12.1/24
+           - name: Ethernet2
+             ipv4:
+               - address: 192.168.13.1/24
+         state: merged
+       when: inventory_hostname == "clab-mcp-lab-r1"
+      
+     - name: Configure R2 layer interfaces
+       arista.eos.eos_l3_interfaces:
+         config:
+           - name: Ethernet1
+             ipv4:
+               - address: 192.168.12.2/24
+           - name: Ethernet2
+             ipv4:
+               - address: 192.168.23.2/24
+         state: merged
+       when: inventory_hostname == "clab-mcp-lab-r2" 
+
+     - name: Configure R3 layer interfaces
+       arista.eos.eos_l3_interfaces:
+         config:   
+           - name: Ethernet1
+             ipv4:
+               - address: 192.168.23.3/24
+           - name: Ethernet2
+             ipv4:
+               - address: 192.168.13.3/24
+
+         state: merged
+       when: inventory_hostname == "clab-mcp-lab-r3"
+         
+
+
+     - name: Configure OSPF on the three routers
+       arista.eos.eos_ospfv2:
+         config:
+          hostname: clab-mcp-lab-r1
+           - process_id: 1
+             router_id: "1.1.1.1"
+             areas:
+               id: "0.0.0.0"
+               type: normal
+             networks:
+               - area: "0.0.0.0"
+                 prefix: 192.168.12.0/24
+               - area: "0.0.0.0"
+                 prefix: 192.168.13.0/24
+         state: merged
+         
+          hostname: clab-mcp-lab-r2
+           - process_id: 1
+             router_id: "2.2.2.2"
+             areas:
+               id: "0.0.0.0"
+               type: normal
+             networks:
+               - area: "0.0.0.0"
+                 prefix: 192.168.12.0/24
+               - area: "0.0.0.0"
+                 prefix: 192.168.23.0/24
+          state: merged
+          
+          hostname: clab-mcp-lab-r3
+           - process_id: 1
+             router_id: "3.3.3.3"
+             areas:
+               id: "0.0.0.0"
+               type: normal
+             networks:
+               - area: "0.0.0.0"
+                 prefix: 192.168.23.0/24
+               - area: "0.0.0.0"
+                 prefix: 192.168.13.0/24
+          state: merged
+
+          
+            
+         
+
