@@ -312,7 +312,7 @@ Run the command "claude mcp list" -> Connected showing that your mcp server is c
 ```
 As you can see it will use the run_show function and logs into the router and runs the show ip interface brief to get the  ip address
 ```
-https://github.com/user-attachments/assets/184957ef-3b9a-4f02-8180-ecd282c563e3
+https://github.com/user-attachments/assets/6d31d2fd-8353-4548-ae28-f88283dc8a67
 
 - [x] Ask Claude to display routing protocol currently running in your topology.
 ```
