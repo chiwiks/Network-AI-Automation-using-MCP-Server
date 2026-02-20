@@ -300,5 +300,11 @@ topology:
   Both functions are feed to the MCP ai server using the @mcp.tool
   ```
 - [x] Next connect your mcpserver script to the Claude ai
+```
+Run the command "claude mcp add mcp_network_automation -s user -- ./mcp/bin/python MCPServer.py"
+Note: mcp_network_automation is name of FastMCP that was imported in McpServer.py script
 
+Run the command "claude mcp list" -> Connected showing that your mcp server is connected to Claude
+
+```
   
