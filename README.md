@@ -308,8 +308,14 @@ Run the command "claude mcp list" -> Connected showing that your mcp server is c
 
 ```
 ## 🔧 Examples of using your claude AI connected to your MCP to run show commands
-- [x] Ask Claude to check interface ip address of R2
-
+- [x] Ask Claude to check interface ip address of R2.
+```
+As you can see it will use the run_show function and logs into the router and runs the show ip interface brief to get the  ip address
+```
 https://github.com/user-attachments/assets/184957ef-3b9a-4f02-8180-ecd282c563e3
 
-
+- [x] Ask Claude to display routing protocol currently running in your topology.
+```
+It will use the run_show function to fetch and display OSPF running in your topolgogy
+```
+https://github.com/user-attachments/assets/d76d5936-c92b-4448-bc2f-66781b184cb0
