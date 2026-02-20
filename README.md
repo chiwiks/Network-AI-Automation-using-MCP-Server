@@ -319,3 +319,9 @@ https://github.com/user-attachments/assets/184957ef-3b9a-4f02-8180-ecd282c563e3
 It will use the run_show function to fetch and display OSPF running in your topolgogy
 ```
 https://github.com/user-attachments/assets/d76d5936-c92b-4448-bc2f-66781b184cb0
+
+- [x] Next ask Claude to configure description on interface
+```
+This will make Claude to us the push_config function to configure the description the interface
+```
+https://github.com/user-attachments/assets/4306df42-9108-4add-a96b-89f8fa1755ae
