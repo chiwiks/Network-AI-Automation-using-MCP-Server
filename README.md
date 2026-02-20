@@ -309,7 +309,7 @@ Run the command "claude mcp list" -> Connected showing that your mcp server is c
 ```
 ## 🔧 Examples of using your claude AI connected to your MCP to run show commands
 - [x] Ask Claude to check interface ip address of R2
-```
+
  ![Screencast from 2026-02-20 12-08-44.webm](https://github.com/user-attachments/assets/3e4d7c0c-a55c-4705-ad9f-0199b3eac5ed)
-```
+
 
