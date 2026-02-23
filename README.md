@@ -325,3 +325,6 @@ https://github.com/user-attachments/assets/d76d5936-c92b-4448-bc2f-66781b184cb0
 This will make Claude to us the push_config function to configure the description the interface
 ```
 https://github.com/user-attachments/assets/4306df42-9108-4add-a96b-89f8fa1755ae
+
+## 🔥 Troubleshooting
+Three Troubleshooting scenarios are located in the [troubleshoot.md]
